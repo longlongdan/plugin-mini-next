@@ -1,0 +1,30 @@
+{
+  "name": "root",
+  "private": true,
+  "scripts": {
+    "init": "rm -rf packages/*/node_modules && rm -rf packages/*/lib && lerna bootstrap",
+    "commit": "npx git-cz",
+    "publish": "lerna publish",
+    "test:logger": "jest ./packages/logger/__tests__ --runInBand --forceExit",
+    "test:plugin-logger": "jest ./packages/plugin-logger/__tests__ --runInBand --forceExit"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.11.5",
+    "@types/jest": "^24.0.13",
+    "@types/node": "^12.12.0",
+    "commitizen": "^4.0.3",
+    "cz-conventional-changelog": "^2.1.0",
+    "jest": "^24.9.0",
+    "ko-sleep": "^1.0.3",
+    "lerna": "^3.18.3",
+    "supertest": "^4.0.2",
+    "ts-jest": "^24.1.0",
+    "ts-node": "^8.8.2",
+    "typescript": "^3.6.4"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
